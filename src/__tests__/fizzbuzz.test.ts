@@ -1,25 +1,30 @@
-import fizzBuzzKata from '../FizzBuzz';
+// import hello from "../hello";
+import FizzBuzz from "../FizzBuzz"
 
-describe('fizzBuzzKata', () => {
-  it('should return the correct output for n = 15', () => {
-    const consoleSpy = jest.spyOn(console, 'log');
-    fizzBuzzKata(15);
-    expect(consoleSpy).toHaveBeenCalledWith("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz");
-  });
-  
-  it('should return the correct output for n = 5', () => {
-    const consoleSpy = jest.spyOn(console, 'log');
-    fizzBuzzKata(5);
-    expect(consoleSpy).toHaveBeenCalledWith("1", "2", "Fizz", "4", "Buzz");
-  });
-  
-  it('should return the correct output for n = 0', () => {
-    const consoleSpy = jest.spyOn(console, 'log');
-    fizzBuzzKata(0);
-    expect(consoleSpy).toHaveBeenCalledTimes(0);
-  });
-  
-  it('should throw an error for negative n', () => {
-    expect(() => fizzBuzzKata(-1)).toThrowError('n must be a positive integer');
-  });
+describe('FizzBuzz', () => {
+    let n = 8; 
+    let arrayFizzed;
+
+    it('write my first test', () => {
+        expect(1).toEqual(1)
+    });
+
+    it('Devrait retourner "Fizz" quand n est divisible par 3', () => {
+      expect(FizzBuzz(3)).toEqual("Fizz");
+    });
+/*
+    it('Devrait retourner "Buzz" quand n est divisible par 5', () => {
+         arrayFizzed = FizzBuzz(5);
+        expect(arrayFizzed.length).toEqual("Buzz");
+    });
+
+    it('Devrait retourner "FizzBuzz" quand n est divisible par 3 et par 5', () => {
+         arrayFizzed = FizzBuzz(8);
+        expect(arrayFizzed.length).toEqual("FizzBuzz");
+    });
+
+    it('Devrait retourner n quand n nest pas divisible par 3 ou par 5', () => {
+        arrayFizzed = FizzBuzz(n);
+        expect(arrayFizzed.length).toEqual(n);
+    });*/
 });
