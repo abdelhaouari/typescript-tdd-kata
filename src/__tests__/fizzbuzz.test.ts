@@ -1,33 +1,25 @@
-// import hello from "../hello";
+import fizzBuzzKata from '../FizzBuzz';
 
-describe('FizzBuzz tdd test', () => {
-
-    beforeEach( () => {
-	})
-
-    it('write my first test', () => {
-        expect(1).toEqual(1)
-    });
+describe('fizzBuzzKata', () => {
+  it('should return the correct output for n = 15', () => {
+    const consoleSpy = jest.spyOn(console, 'log');
+    fizzBuzzKata(15);
+    expect(consoleSpy).toHaveBeenCalledWith("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz");
+  });
+  
+  it('should return the correct output for n = 5', () => {
+    const consoleSpy = jest.spyOn(console, 'log');
+    fizzBuzzKata(5);
+    expect(consoleSpy).toHaveBeenCalledWith("1", "2", "Fizz", "4", "Buzz");
+  });
+  
+  it('should return the correct output for n = 0', () => {
+    const consoleSpy = jest.spyOn(console, 'log');
+    fizzBuzzKata(0);
+    expect(consoleSpy).toHaveBeenCalledTimes(0);
+  });
+  
+  it('should throw an error for negative n', () => {
+    expect(() => fizzBuzzKata(-1)).toThrowError('n must be a positive integer');
+  });
 });
-
-
-// Given an integer n, return a string array answer (1-indexed) where:
-
-// answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
-// answer[i] == "Fizz" if i is divisible by 3.
-// answer[i] == "Buzz" if i is divisible by 5.
-// answer[i] == i if non of the above conditions are true.
- 
-
-// Example 1:
-
-// Input: n = 3
-// Output: ["1","2","Fizz"]
-// Example 2:
-
-// Input: n = 5
-// Output: ["1","2","Fizz","4","Buzz"]
-// Example 3:
-
-// Input: n = 15
-// Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
